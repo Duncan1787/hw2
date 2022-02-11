@@ -68,7 +68,9 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+Movie.destroy_all
+Person.destroy_all
+Cast.destroy_all
 
 # Generate models and tables, according to the domain model
 # TODO!
@@ -77,10 +79,33 @@
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+people_names = ["Christoper Nolan", "Christian Bale","Michael Caine","Liam Neeson","Katie Holmes","Gary Oldman", "Heath Ledger"]
+for name in people_names
+    person = Person.new
+    person.name = name
+    person.save
+end
+
+movie1 = Movie.new
+movie1.title = "Batman Begins"
+movie1.release_year = 2005
+movie1.rating = "PG-13"
+#movie1.director_id = person1.id
+
+#person1 = Person.new
+#person1.name = "Christian Bale"
+
+cast1 = Cast.new
+cast1.character = "Bruce Wayne"
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
 puts ""
+puts movie1.title
+#puts movie1.director.name
+
+puts Person.all.count
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!

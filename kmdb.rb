@@ -79,18 +79,35 @@ Cast.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-people_names = ["Christoper Nolan", "Christian Bale","Michael Caine","Liam Neeson","Katie Holmes","Gary Oldman", "Heath Ledger"]
+# people
+people_names = ["Christoper Nolan", "Christian Bale","Michael Caine","Liam Neeson","Katie Holmes","Gary Oldman", "Heath Ledger", "Aaron Eckhart", "Maggie Gyllenhall", "Tom Hardy", "Joseph Gordon-Levitt","Anne Hathway"]
 for name in people_names
     person = Person.new
     person.name = name
     person.save
 end
 
-movie1 = Movie.new
-movie1.title = "Batman Begins"
-movie1.release_year = 2005
-movie1.rating = "PG-13"
-#movie1.director_id = person1.id
+#movies
+movie = Movie.new
+movie.title = "Batman Begins"
+movie.release_year = 2005
+movie.rating = "PG-13"
+movie.director_id = Person.where({name:"Christoper Nolan"}).id
+movie.save
+
+movie = Movie.new
+movie.title = "The Dark Knight"
+movie.release_year = 2008
+movie.rating = "PG-13"
+movie.director_id = Person.where({name:"Christoper Nolan"}).id
+movie.save
+
+movie = Movie.new
+movie.title = "The Dark Knight Rises"
+movie.release_year = 2012
+movie.rating = "PG-13"
+movie.director_id = Person.where({name:"Christoper Nolan"}).id
+movie.save
 
 #person1 = Person.new
 #person1.name = "Christian Bale"

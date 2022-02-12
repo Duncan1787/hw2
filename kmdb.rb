@@ -109,6 +109,11 @@ movie.rating = "PG-13"
 movie.director_id = Person.where({name:"Christoper Nolan"}).id
 movie.save
 
+cast = Cast.new
+cast.movie_id = Movie.where({title:"Batman Begins"})
+cast.person_id = Person.where({name:"Christain Bale"})
+cast.character = "Bruce Wayne"
+
 #person1 = Person.new
 #person1.name = "Christian Bale"
 
@@ -120,7 +125,7 @@ puts "Movies"
 puts "======"
 puts ""
 puts movie1.title
-#puts movie1.director.name
+
 
 puts Person.all.count
 
